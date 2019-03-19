@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="themes/my-custom-theme.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />  
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?73c27e26f610eb3c9f3feb0c75b03925";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+
+    <section data-role="page" id="mainPage">
+        <div data-role="header">
+            <a id="addlink" href="#editPage" class="ui-btn ui-btn-inline">Add</a>
+            <h1>Contact List</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <ul id="ulContent" data-role="listview" data-filter="true" data-filter-placeholder="Search Contacts..."
+                data-inset="true">
+            </ul>
+        </div>
+
+        <div data-role="footer">
+            <h1>Footer page 1</h1>
+        </div>
+    </section>
+
+    <!--edit page-->
+    <section data-role="page" id="editPage">
+        <div data-role="header">
+            <a id="back" href="#mainPage" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left">back</a>
+            <h1 id="updateName"></h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+
+            <form style="width: 500px;">
+                Name :<br><span style="width: 100px;">
+                    <span style="width: 70%; box-sizing: border-box; display: inline-block;"><input type="text"
+                            id="name"></span>
+                    <span id="errname" style="color: red; width:30%"></span>
+                </span><br>
+                Phone :<br><span style="width: 100px;">
+                    <span style="width: 70%; box-sizing: border-box; display: inline-block;"><input type="tel"
+                            id="phone" placeholder="02"></span>
+                    <span id="errphone" style="color: red; width:30%"></span>
+                </span><br>
+                Email :<br><span style="width: 100px;">
+                    <span style="width: 70%; box-sizing: border-box; display: inline-block;"><input type="email"
+                            id="email"></span>
+                    <span id="errmail" style="color: red; width:30%"></span>
+                </span><br>
+                <span style="position: relative;">
+                    <br>
+                    Gender :
+                    <span style="position: absolute;  top: 2px;">
+                        <select id="gender" data-role="slider">
+                                 <option value="male">Male</option>
+                                 <option value="female">Female</option>
+                        </select>
+                    </span>
+                </span><br><br>
+                <a  id="addbtn" class="ui-btn ui-btn-inline ui-icon-check ">Save</a>
+                <a href="#mainPage" id="cancel" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Cancel</a>
+            </form>
+
+        </div>
+
+        <div data-role="footer">
+            <h1>Contact List</h1>
+        </div>
+    </section>
+
+    <!--delete page-->
+    <section data-role="page" data-dialog="true" id="deletePage">
+        <div data-role="header">
+            <h1 style="margin-left : 20px ">Do You Want To Delete this Contact?</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <a href="#infoPage" class="ui-btn ui-btn-inline">Cancel</a>
+            <a href="#mainPage" id="deleteLink" class="ui-btn ui-btn-inline">Delete</a>
+        </div>
+
+    </section>
+
+    <!--info page-->
+    <section data-role="page" id="infoPage">
+        <div data-role="header">
+            <a href="#mainPage" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left">back</a>
+            <h1 id="contactName"></h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <img id="contactimg" width="200px" height="200px">
+            <br><br>
+            <span>
+                <a href="#deletePage" id="deletebtn" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left"> </a>
+                <a id="telcall"  class="ui-btn ui-btn-inline ui-icon-phone ui-btn-icon-left"> </a>
+                <a href="#editPage" id="updatebtn" class="ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-left"> </a>
+            </span>
+        </div>
+
+        <div data-role="footer">
+            <h1>Contact List</h1>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
